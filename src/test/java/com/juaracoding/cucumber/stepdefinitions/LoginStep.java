@@ -33,6 +33,7 @@ public class LoginSteps {
     // TCC.HR.001
     @Given("I am on the login page for {string} test")
     public void i_am_on_the_login_page(String testType){
+        System.out.println("User is on login page");
         // Logging test type
         //extentTest.log(LogStatus.INFO, "TEST TYPE : " + testType.toUpperCase());
 
