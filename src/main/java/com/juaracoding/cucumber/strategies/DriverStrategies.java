@@ -3,7 +3,7 @@ package com.juaracoding.cucumber.strategies;
 import com.juaracoding.cucumber.utils.Browser;
 import com.juaracoding.cucumbermanager.ChromeManager;
 import com.juaracoding.cucumbermanager.FirefoxManager;
-import com.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriver;
 
 public class DriverStrategies  {
     public static WebDriver setStrategy(String browser) {

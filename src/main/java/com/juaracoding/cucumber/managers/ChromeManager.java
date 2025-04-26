@@ -10,6 +10,7 @@ import java.util.Map;
 public class ChromeManager {
 
     public static WebDriver buildDriver() {
+        WebDriverManager.chromedriver().setup();
         //System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
@@ -18,15 +19,15 @@ public class ChromeManager {
         options.addArguments("--disable-password-generation");
         options.addArguments("--disable-save-password-bubble");
 
-        Maps<String, Object> prefs =  new HasMap<>();
+        Map<String, Object> prefs =  new HashMap<>();
         prefs.put("credentials_enable_service",false);
         prefs.put("profile.password_manager_enabled",false);
-        prefs.put("profile.default_content_setting_values.notifications",false);
-        prefs.put("profile.default_content_seeting_values.popups",false);
+        prefs.put("profile.default_content_setting_values.notifications",2);
+        prefs.put("profile.default_content_setting_values.popups",2);
 
-        options.setExperimentalOption("Prefs",prefs);
+        options.setExperimentalOption("prefs",prefs);
 
-        return  new ChrmeDriver(options);
+        return  new ChromeDriver(options);
 
     }
 }
