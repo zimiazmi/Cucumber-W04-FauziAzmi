@@ -52,6 +52,7 @@ public class LoginSteps {
         loginPage.fillPassword(password);
         extentTest.log(LogStatus.PASS,"I enter username and password");
     }
+
     @And("I click the login button")
     public void i_click_the_login_button(){
         loginPage.clickLoginButton();
